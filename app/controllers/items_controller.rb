@@ -8,15 +8,21 @@ class ItemsController < ApplicationController
             f.json {render json: @items, status: 201}
         end
     end
-
+    
+    def show
+        @item = Item.find(params[:id])
+        render json: @item, status: 201
+    end
+    
     def create
-        item = Item.new(user_params)
-        item.save
+        @item = Item.create(user_params)
+        render json: @item, status: 201
     end
 
     def destroy
-        item = Item.find(params[:id])
-        item.destroy
+        @item = Item.find(params[:id])
+        @item.destroy
+        render json: @item, status: 201
     end
 
     private
