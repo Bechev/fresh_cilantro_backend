@@ -12,7 +12,7 @@ class ItemsController < ApplicationController
     end
     
     def create
-        @item = Item.create(user_params)
+        @item = Item.create(item_params)
         render json: @item, status: 201
     end
 
@@ -23,7 +23,7 @@ class ItemsController < ApplicationController
     end
 
     private
-    def user_params
+    def item_params
         params.require(:item).permit(:name, :brand, :description)
       end
 
