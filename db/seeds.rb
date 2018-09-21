@@ -8,15 +8,15 @@
 
 
 item_list = [
-    ["Mini Classic", "Chanel", "Empty description"],
-    ["Hermes Belt", "Hermes", "Empty description"],
-    ["LV cross body","Louis Vuitton","Empty description"],
-    ["WOC","Chanel" ,"Empty description"],
-    ["Espadrilles", "Chanel","Empty description"],
-    ["Sneakers", "Gucci", "Empty description"],
-    ["Coin purse", "Fendi", "Empty description"],
+    ["Mini Classic", "Chanel", "Empty description", 100],
+    ["Hermes Belt", "Hermes", "Empty description", 43],
+    ["LV cross body","Louis Vuitton","Empty description", 27],
+    ["WOC","Chanel" ,"Empty description", 52],
+    ["Espadrilles", "Chanel","Empty description", 37],
+    ["Sneakers", "Gucci", "Empty description", 23],
+    ["Coin purse", "Fendi", "Empty description", 01],
 ]
 
-item_list.each do |name,brand, description|
-    Item.create(name: name, brand: brand, description: description)
+item_list.each do |name,brand, description, likes|
+    Item.create(name: name, brand: brand, description: description, likes: likes)
 end
